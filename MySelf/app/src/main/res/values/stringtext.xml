@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 회원가입 -->
+    <string name="SIGNUP_NAME">이름</string>
+    <string name="SIGNUP_ID">아이디</string>
+    <string name="SIGNUP_PW">비밀번호</string>
+    <string name="SIGNUP_MBTI">MBTI</string>
+
+    <string name="SIGNUP_NAME_HINT">이름을 입력해 주세요.</string>
+    <string name="SIGNUP_ID_HINT">아이디를 입력해 주세요.</string>
+    <string name="SIGNUP_PW_HINT">비밀번호를 입력해 주세요.</string>
+    <string name="SIGNUP_MBTI_HINT">MBTI 입력해 주세요.</string>
+
+    <string name="SIGNUP_BUTTON">회원가입</string>
+
+    <!-- 로그인 화면 -->
+    <string name="LOGIN_ID">ID</string>
+    <string name="LOGIN_PW">PassWord</string>
+    <string name="LOGIN_BUTTON">로그인</string>
+    <string name="LOGINTOSIGNUP_BUTTON">회원가입</string>
+
+    <!-- home 화면 -->
+    <string name="HOME_ID">님의 정보입니다.</string>
+    <string name="HOME_NAME">이름 : </string>
+    <string name="HOME_AGE">나이 : </string>
+    <string name="HOME_MBTI">MBTI : </string>
+    <string name="HOME_TMI">안드로이드 4기</string>
+
+    <string name="HOME_BUTTON">종료</string>
+
+</resources>
