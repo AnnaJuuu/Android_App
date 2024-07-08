@@ -26,6 +26,7 @@ class SignInActivity : AppCompatActivity() {
         btn_signup()
     }
 
+    //
     //활동 간의 결과를 담당하는 객체 생성, 늦은 초기화
     //다른 액티비티를 시작하고 그 결과를 비동기적으로 받아올 수 있는 객체 <타입은 intent를 사용하여 초기활 할 것>
     private lateinit var resultLaunch : ActivityResultLauncher<Intent>
