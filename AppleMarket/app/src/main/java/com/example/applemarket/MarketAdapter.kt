@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.applemarket.databinding.ItemRecyclerviewBinding
+import java.text.DecimalFormat
 
 class MarketAdapter(val mItems: MutableList<MyItem>) :
     RecyclerView.Adapter<MarketAdapter.Holder>() {
@@ -17,16 +18,25 @@ class MarketAdapter(val mItems: MutableList<MyItem>) :
             ItemRecyclerviewBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return Holder(binding)
     }
+    //상품 가격은 1000단위로 콤마(,) 처리
+    fun replaseDecimalFormat(num: Int): String {
+        return DecimalFormat("#,###").format(num).toString()
+    }
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
+        // 클릭 이벤트를 처리
+        holder.itemView.setOnClickListener { itemClick?.onClick(it, position) }
+        // 롱 클릭 이벤트를 처리
+        holder.itemView.setOnLongClickListener { itemClick?.onPressed(it, position); true }
+        holder.productImageView.clipToOutline = true
         holder.productImageView.setImageResource(mItems[position].aIcon)
+
         holder.name.text = mItems[position].aName
         holder.address.text = mItems[position].aAddress
-        holder.price.text = mItems[position].aPrice.toString()
+        //상품 가격은 1000단위로 콤마(,) 처리 + 원
+        holder.price.text = replaseDecimalFormat(mItems[position].aPrice) + "원"
         holder.likeCount.text = mItems[position].heartCount.toString()
-        holder.likeIcon.setImageResource(mItems[position].aIconHeart)
         holder.chatCount.text = mItems[position].chatCount.toString()
-        holder.chatIcon.setImageResource(mItems[position].aIconChat)
 
 
         holder.itemView.setOnClickListener {
@@ -35,7 +45,10 @@ class MarketAdapter(val mItems: MutableList<MyItem>) :
     }
 
     interface ItemClick {
+        // 클릭 이벤트를 처리
         fun onClick(view: View, position: Int)
+        // 롱 클릭 이벤트를 처리
+        fun onPressed(view: View, postion: Int)
     }
 
     val itemClick: ItemClick? = null
@@ -47,13 +60,11 @@ class MarketAdapter(val mItems: MutableList<MyItem>) :
     class Holder(val binding: ItemRecyclerviewBinding) : RecyclerView.ViewHolder(binding.root) {
         val root = binding.root
         val productImageView = binding.ivProfile
-        val name = binding.tvName
+        val name = binding.tvTitle
         val address = binding.tvAddress
         val price = binding.tvPrice
         val likeCount = binding.tvLike
-        val likeIcon = binding.ivLike
         val chatCount = binding.tvChat
-        val chatIcon = binding.ivChat
     }
 
 

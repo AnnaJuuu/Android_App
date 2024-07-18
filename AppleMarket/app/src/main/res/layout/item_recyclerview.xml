@@ -19,14 +19,14 @@
 
 
     <TextView
-        android:id="@+id/tv_name"
+        android:id="@+id/tv_title"
         style="@style/product_name_14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
         android:text="산진 한달된 선풍기 팝니다"
         app:layout_constraintStart_toEndOf="@+id/iv_profile"
         app:layout_constraintTop_toTopOf="@+id/iv_profile" />
-
 
     <TextView
         android:id="@+id/tv_address"
@@ -34,8 +34,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="서울 서대문구 창천동"
-        app:layout_constraintStart_toStartOf="@+id/tv_name"
-        app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+        app:layout_constraintStart_toStartOf="@+id/tv_title"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title" />
 
 
     <TextView

@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import com.example.fragment.databinding.FragmentFirstFragementBinding
+import org.w3c.dom.Text
 
 private const val ARG_PARAM1 = "param1"
 
@@ -33,6 +35,7 @@ class FirstFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         // [1] Activity -> FirstFragment
         binding.tvFrag1Text.text = param1
+        //requireActivity().findViewById<TextView>(R.id.tvFrag1Text).text = param1
     }
 
     companion object {
